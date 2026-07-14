@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Ayang ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:url("IMG-20260713-WA0008.jpg") center/cover no-repeat fixed;
+position:relative;
+}
+
+body::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.55));
+backdrop-filter:blur(3px);
+}
+
+.card{
+
+position:relative;
+z-index:2;
+
+width:90%;
+max-width:430px;
+
+padding:35px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.3);
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.35),
+0 0 25px rgba(255,182,193,.25);
+
+text-align:center;
+
+animation:naik 1.3s ease;
+
+}
+
+@keyframes naik{
+from{
+opacity:0;
+transform:translateY(60px) scale(.9);
+}
+to{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+}
+
+h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:48px;
+
+color:white;
+
+text-shadow:0 0 15px pink;
+
+margin-bottom:15px;
+
+}
+
+p{
+
+color:white;
+
+font-size:17px;
+
+line-height:1.9;
+
+text-shadow:0 2px 6px black;
+
+}
+
+button{
+
+margin-top:30px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:40px;
+
+background:linear-gradient(45deg,#ff4d6d,#ff9a9e);
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:0 0 20px rgba(255,105,180,.6);
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 0 35px hotpink;
+
+}
+
+#pesan{
+
+display:none;
+
+margin-top:25px;
+
+font-size:24px;
+
+font-family:'Dancing Script',cursive;
+
+color:#fff;
+
+animation:muncul 1s;
+
+text-shadow:0 0 15px pink;
+
+}
+
+@keyframes muncul{
+
+from{
+
+opacity:0;
+
+transform:scale(.6);
+
+}
+
+to{
+
+opacity:1;
+
+transform:scale(1);
+
+}
+
+}
+
+/* LOVE */
+
+.love{
+
+position:absolute;
+
+font-size:22px;
+
+animation:love 6s linear forwards;
+
+pointer-events:none;
+
+}
+
+@keyframes love{
+
+0%{
+
+transform:translateY(0) scale(.5);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(720deg) scale(1.8);
+
+opacity:0;
+
+}
+
+}
+
+/* GLOW */
+
+.glow{
+
+position:absolute;
+
+width:250px;
+
+height:250px;
+
+background:#ff5f8f55;
+
+filter:blur(120px);
+
+border-radius:50%;
+
+animation:gerak 10s infinite alternate;
+
+}
+
+.glow:nth-child(1){
+
+top:-80px;
+
+left:-50px;
+
+}
+
+.glow:nth-child(2){
+
+bottom:-90px;
+
+right:-50px;
+
+background:#87cefa55;
+
+}
+
+@keyframes gerak{
+
+to{
+
+transform:translate(40px,-20px);
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+<div class="glow"></div>
+
+<div class="card">
+
+<h1>❤️ Untuk Ayang ❤️</h1>
+
+<p>
+
+Tidak ada yang lebih indah daripada melihat senyummu.
+
+Semoga setiap langkahmu selalu dipenuhi kebahagiaan,
+
+karena bahagiaku adalah melihatmu tersenyum.
+
+</p>
+
+<button onclick="loveRain()">
+
+❤️ Aku Sayang Kamu ❤️
+
+</button>
+
+<div id="pesan">
+
+💖 Aku akan selalu memilihmu,
+
+hari ini,
+
+besok,
+
+dan selamanya. 💖
+
+</div>
+
+</div>
+
+<script>
+
+function loveRain(){
+
+document.getElementById("pesan").style.display="block";
+
+for(let i=0;i<120;i++){
+
+let love=document.createElement("div");
+
+love.className="love";
+
+love.innerHTML="💖";
+
+love.style.left=Math.random()*100+"vw";
+
+love.style.bottom="-40px";
+
+love.style.fontSize=(18+Math.random()*28)+"px";
+
+love.style.animationDuration=(3+Math.random()*4)+"s";
+
+document.body.appendChild(love);
+
+setTimeout(()=>{
+
+love.remove();
+
+},7000);
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
